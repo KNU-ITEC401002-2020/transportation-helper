@@ -7,4 +7,4 @@
 * Firebase-functions: v3.6.1
 
 ## Contributor
-* [wingtree](https://wingtree.github.io) (gd@ceedup.com)
+* [wingtree](https://wingtree.github.io) (electropark917@gmail.com)

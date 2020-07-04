@@ -8,3 +8,6 @@
 
 ## Contributor
 * [wingtree](https://wingtree.github.io) (electropark917@gmail.com)
+
+---
+[API 명세서](https://github.com/KNU-ITEC401002-2020/transportation-helper-backend/blob/master/functions/README.md)

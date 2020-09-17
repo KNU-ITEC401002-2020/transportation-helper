@@ -106,7 +106,7 @@
 		}
 
 
-## /bus/stop (POST)
+## /bus/stop (GET)
 
 하차벨 작동 요청
 

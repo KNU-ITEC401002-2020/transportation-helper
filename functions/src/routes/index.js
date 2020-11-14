@@ -1,9 +1,13 @@
 const express = require('express');
 
-const mock = require('./mock');
+const location = require('./location');
+const traffic = require('./traffic');
+const stop = require('./stop');
 
 const router = express.Router();
 
-router.use('/mock', mock);
+router.use('/location', location);
+router.use('/traffic', traffic);
+router.use('/stop', stop);
 
 module.exports = router;

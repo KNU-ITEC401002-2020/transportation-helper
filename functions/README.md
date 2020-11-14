@@ -7,66 +7,54 @@
 `https://HOST_URL`
 
 
-## /bus/location (GET)
+## /location (GET)
 
-현재 버스의 위치정보 반환
+목적지까지의 위치정보 반환
 
 ### Headers
-| Header | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| access-key | required | string | 커스텀 키 |
 
 ### Path Parameter
 
 ### Query Parameter
 | Query | Required | Type | Description |
 |:------:|:--------:|:----:|:-----------:|
-| station | required | string | 정류장 id |
+| bus | required | string | 버스 id |
+| destination | required | string | 정류장 id |
 
 ### Body
 
 ### Response
 
 * 200 : OK
-    
-	    {
-            "results": {
-                "time_left": [
-                    {
-                        "bus": string, // 버스 번호
-                        "time_left": number // 도착까지 남은 시간
-                    }
-                ]
-            }
-        }
+```
+{
+  "results": {
+    "time_left": [
+      {
+        "bus": string, // 버스 번호
+        "time_left": number, // 도착까지 남은 시간(분)
+    	},
+    ],
+  },
+}
+```
 
 * 400 : Bad Request
-    
-	    {
-		    "message": "bad request"
-		}
-
-* 401 : Unauthorized
-
-	    {
-		    "message": "unauthorized access"
-		}
+```
+{}
+```
 
 * 500 : Internal Server Error
+```
+{}
+```
 
-	    {
-		    "message": "internal server error"
-		}
 
-
-## /bus/traffic (GET)
+## /traffic (GET)
 
 해당 버스의 혼잡도 정보 반환
 
 ### Headers
-| Header | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| access-key | required | string | 커스텀 키 |
 
 ### Path Parameter
 
@@ -80,40 +68,64 @@
 ### Response
 
 * 200 : OK
-    
-	    {
-            "results": {
-                "traffic": 'full' | 'middle' | 'fresh'
-            }
-        }
+```
+{
+  "results": {
+    "traffic": 'full' | 'middle' | 'fresh',
+  },
+}
+```
 
 * 400 : Bad Request
-    
-	    {
-		    "message": "bad request"
-		}
-
-* 401 : Unauthorized
-
-	    {
-		    "message": "unauthorized access"
-		}
+```
+{}
+```
 
 * 500 : Internal Server Error
+```
+{}
+```
 
-	    {
-		    "message": "internal server error"
-		}
+
+## /traffic (POST)
+
+혼잡도 업데이트
+
+### Headers
+
+### Path Parameter
+
+### Query Parameter
+| Query | Required | Type | Description |
+|:------:|:--------:|:----:|:-----------:|
+| bus | required | string | 버스 id |
+| traffic | required | number | 혼잡도 `middle`, `full`, `fresh` |
+
+### Body
+
+### Response
+
+* 200 : OK
+```
+{}
+```
+
+* 400 : Bad Request
+```
+{}
+```
+
+* 500 : Internal Server Error
+```
+{}
+```
 
 
-## /bus/stop (POST)
+## /stop (POST)
 
 하차벨 작동 요청
 
 ### Headers
-| Header | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| access-key | required | string | 커스텀 키 |
 
 ### Path Parameter
 
@@ -121,29 +133,23 @@
 | Query | Required | Type | Description |
 |:------:|:--------:|:----:|:-----------:|
 | bus | required | string | 버스 id |
+| destination | required | string | 목적지 id |
 
 ### Body
 
 ### Response
 
 * 200 : OK
-    
-	    {}
+```    
+{}
+```
 
 * 400 : Bad Request
-    
-	    {
-		    "message": "bad request"
-		}
-
-* 401 : Unauthorized
-
-	    {
-		    "message": "unauthorized access"
-		}
+```
+{}
+```
 
 * 500 : Internal Server Error
-
-	    {
-		    "message": "internal server error"
-		}
+```
+{}
+```

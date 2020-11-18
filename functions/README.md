@@ -4,7 +4,7 @@
 
 ## Base URL
 
-`https://asia-northeast2-transportation-helper.cloudfunctions.net/ceedupApi`
+`https://asia-northeast2-transportation-helper.cloudfunctions.net/api`
 
 
 ## /location (GET)

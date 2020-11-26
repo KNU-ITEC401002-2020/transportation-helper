@@ -7,49 +7,6 @@
 `https://HOST_URL`
 
 
-## /location (GET)
-
-목적지까지의 위치정보 반환
-
-### Headers
-
-### Path Parameter
-
-### Query Parameter
-| Query | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| bus | required | string | 버스 id |
-| destination | required | string | 정류장 id |
-
-### Body
-
-### Response
-
-* 200 : OK
-```
-{
-  "results": {
-    "time_left": [
-      {
-        "bus": string, // 버스 번호
-        "time_left": number, // 도착까지 남은 시간(분)
-    	},
-    ],
-  },
-}
-```
-
-* 400 : Bad Request
-```
-{}
-```
-
-* 500 : Internal Server Error
-```
-{}
-```
-
-
 ## /traffic (GET)
 
 해당 버스의 혼잡도 정보 반환
@@ -99,7 +56,7 @@
 | Query | Required | Type | Description |
 |:------:|:--------:|:----:|:-----------:|
 | bus | required | string | 버스 id |
-| traffic | required | number | 혼잡도 `middle`, `full`, `fresh` |
+| traffic | required | number | 사람 수 |
 
 ### Body
 

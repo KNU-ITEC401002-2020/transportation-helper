@@ -4,7 +4,7 @@
 
 ## Base URL
 
-`https://HOST_URL`
+`https://asia-northeast2-transportation-helper.cloudfunctions.net/api`
 
 
 ## /traffic (GET)

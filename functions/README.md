@@ -90,7 +90,7 @@
 | Query | Required | Type | Description |
 |:------:|:--------:|:----:|:-----------:|
 | bus | required | string | 버스 id |
-| destination | required | string | 목적지 id |
+| action | required | boolean | 벨 작동 여부 |
 
 ### Body
 

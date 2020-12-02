@@ -4,15 +4,15 @@ const firebase = require('firebase-admin');
 
 router.post('/', async (req, res) => {
   try {
-    const {bus, destination} = req.query;
-    if (!bus || !destination) {
+    const {bus, action} = req.query;
+    if (!bus || action === undefined) {
       const error = {status: 400};
       throw error;
     }
 
     const db = firebase.firestore().collection('bus').doc(bus);
 
-    await db.update({bell: destination});
+    await db.update({bell: action});
 
     res.status(200).json({success: true});
   } catch (err) {

@@ -7,80 +7,9 @@
 `https://asia-northeast2-transportation-helper.cloudfunctions.net/api`
 
 
-## /traffic (GET)
-
-해당 버스의 혼잡도 정보 반환
-
-### Headers
-
-### Path Parameter
-
-### Query Parameter
-| Query | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| bus | required | string | 버스 id |
-
-### Body
-
-### Response
-
-* 200 : OK
-```
-{
-  "results": {
-    "traffic": 'full' | 'middle' | 'fresh',
-  },
-}
-```
-
-* 400 : Bad Request
-```
-{}
-```
-
-* 500 : Internal Server Error
-```
-{}
-```
-
-
-## /traffic (POST)
-
-혼잡도 업데이트
-
-### Headers
-
-### Path Parameter
-
-### Query Parameter
-| Query | Required | Type | Description |
-|:------:|:--------:|:----:|:-----------:|
-| bus | required | string | 버스 id |
-| traffic | required | number | 사람 수 |
-
-### Body
-
-### Response
-
-* 200 : OK
-```
-{}
-```
-
-* 400 : Bad Request
-```
-{}
-```
-
-* 500 : Internal Server Error
-```
-{}
-```
-
-
 ## /stop (POST)
 
-하차벨 작동 요청
+하차벨 변경 요청
 
 ### Headers
 
@@ -90,7 +19,7 @@
 | Query | Required | Type | Description |
 |:------:|:--------:|:----:|:-----------:|
 | bus | required | string | 버스 id |
-| action | required | boolean | 벨 작동 여부 |
+| action | required | number | 1: 벨 울림, 2: 벨 꺼짐 |
 
 ### Body
 
@@ -99,6 +28,41 @@
 * 200 : OK
 ```    
 {}
+```
+
+* 400 : Bad Request
+```
+{}
+```
+
+* 500 : Internal Server Error
+```
+{}
+```
+
+
+## /stop (GET)
+
+하차벨 상태 받아오기
+
+### Headers
+
+### Path Parameter
+
+### Query Parameter
+| Query | Required | Type | Description |
+|:------:|:--------:|:----:|:-----------:|
+| bus | required | string | 버스 id |
+
+### Body
+
+### Response
+
+* 200 : OK
+```    
+{
+  "bell": boolean
+}
 ```
 
 * 400 : Bad Request
